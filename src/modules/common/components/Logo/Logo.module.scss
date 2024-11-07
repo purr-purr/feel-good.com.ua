@@ -1,0 +1,14 @@
+.container {
+	@include flex();
+	font-size: 14px;
+	line-height: 1;
+	font-weight: 800;
+	text-transform: uppercase;
+	width: fit-content;
+	color: var(--dark);
+	text-decoration: none;
+
+	&:hover {
+		opacity: .7;
+	}
+}

@@ -1,0 +1,98 @@
+.container {
+	@include flex($gap: 50px);
+	padding-block: 290px 150px;
+	margin-bottom: -60px;
+
+	@include pseudo() {
+		top: 0;
+		left: calc((100% - 100vw) / 2);
+		width: 100vw;
+		height: 100%;
+		border-bottom-left-radius: 80px;
+		border-bottom-right-radius: 80px;
+	}
+
+	@include media($laptop-bp) {
+		flex-direction: column;
+		padding-block: 200px 120px;
+		margin-bottom: -85px;
+	}
+
+	@include media($mobile-bp) {
+		padding-block: 140px 70px;
+		margin-bottom: -77px;
+
+		&:before {
+			border-bottom-left-radius: 50px;
+			border-bottom-right-radius: 50px;
+		}
+	}
+
+	&--white {
+		&:before {
+			background-color: var(--light-bg);
+		}
+
+		color: var(--dark);
+	}
+
+	&--dark {
+		&:before {
+			background-color: var(--dark);
+		}
+
+		color: var(--white);
+	}
+
+	&--index1:before {
+		z-index: -1;
+	}
+
+	&--index2:before {
+		z-index: -2;
+	}
+
+	&--index3:before {
+		z-index: -3;
+		background: url('../../assets/bank-details-bg.jpg') no-repeat center/cover;
+	}
+
+	&--index4:before {
+		z-index: -4;
+	}
+}
+
+.leftSide {
+	width: 560px;
+	min-width: 560px;
+
+	@include media($mobile-bp) {
+		width: 100%;
+		min-width: unset;
+	}
+}
+
+.title {
+	font-size: 14px;
+	font-weight: 300;
+	width: fit-content;
+	padding: 10px 20px;
+	border-radius: 30px;
+	border: 1px solid;
+
+	@include media($mobile-bp) {
+		padding: 7px 15px;
+	}
+
+	&--dark {
+		border-color: var(--white);
+	}
+
+	&--white {
+		border-color: var(--dark);
+	}
+}
+
+.rightSide {
+	width: 100%;
+}

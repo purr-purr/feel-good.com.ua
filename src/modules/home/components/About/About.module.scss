@@ -1,0 +1,21 @@
+.container {
+	@include flex($gap: 29px);
+	list-style-type: none;
+	padding-left: 0;
+
+	@include media($mobile-bp) {
+		flex-direction: column;
+	}
+
+	& li {
+		@include media($laptop-bp) {
+			width: calc(50% - 29px);
+			min-width: calc(50% - 29px);
+		}
+
+		@include media($mobile-bp) {
+			width: auto;
+			min-width: unset;
+		}
+	}
+}

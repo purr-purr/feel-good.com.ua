@@ -1,0 +1,31 @@
+.container {
+	all: unset;
+	@include flex($align: center);
+	font-weight: 500;
+	border-radius: 30px;
+	background-color: var(--dark);
+	color: var(--white);
+	padding: 16px 24px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+
+	& img {
+		width: 18px;
+		height: 18px;
+		margin-left: 8px;
+		transition: all .3s ease-in-out;
+	}
+
+	&:hover {
+		color: #bbb;
+		transition: all .3s ease-in-out;
+
+		img {
+			margin-left: 20px;
+			transition: all .3s ease-in-out;
+		}
+	}
+}
