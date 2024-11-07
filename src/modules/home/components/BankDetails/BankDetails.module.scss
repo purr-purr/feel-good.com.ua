@@ -1,3 +1,38 @@
+.container {
+	margin-bottom: 250px;
+
+	@include pseudo() {
+		width: 1240px;
+		height: 390px;
+		right: -119px;
+		top: -119px;
+		background: url('../../assets/pattern2.png') no-repeat center/contain;
+		z-index: -1;
+	}
+
+	@include media($laptop-bp) {
+		margin-bottom: 130px;
+
+		&:before {
+			width: 1000px;
+			height: 330px;
+			right: -55px;
+			top: -45px;
+		}
+	}
+
+	@include media($mobile-bp) {
+		margin-bottom: 80px;
+
+		&:before {
+			width: 900px;
+			height: 325px;
+			right: -50px;
+			top: 0;
+		}
+	}
+}
+
 .list {
 	@include flex($gap: 29px);
 	list-style-type: none;
@@ -20,7 +55,8 @@
 		}
 	}
 
-	& dt, dd {
+	& dt,
+	dd {
 		display: inline;
 	}
 }

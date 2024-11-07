@@ -1,22 +1,27 @@
-import {FC, type ReactNode} from 'react';
+import { FC, type ReactNode } from 'react';
+
+import cn from 'classnames';
 
 import s from './SplitBlocks.module.scss';
-import cn from "classnames";
 
 const SplitBlocks: FC<{
 	children: ReactNode;
+	className?: string;
 	title: string;
 	anchor?: string;
-	color?: 'white' | 'dark';
-	index: number;
-}> = ({children, title, anchor, color = 'white', index}) => {
-
+	isYellowPatternBg?: boolean;
+}> = ({ children, title, anchor, className, isYellowPatternBg = false }) => {
 	return (
 		<section
-			className={cn(s.container, s[`container--${color}`], s[`container--index${index}`])}
-			id={anchor}>
+			className={cn(
+				s.container,
+				className && className,
+				isYellowPatternBg && s[`container--yellowPattern`],
+			)}
+			id={anchor}
+		>
 			<aside className={s.leftSide}>
-				<h3 className={cn(s.title, s[`title--${color}`])}>{title}</h3>
+				<h3 className={s.title}>{title}</h3>
 			</aside>
 			<article className={s.rightSide}>{children}</article>
 		</section>

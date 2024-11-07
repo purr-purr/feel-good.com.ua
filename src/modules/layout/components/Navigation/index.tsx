@@ -6,19 +6,19 @@ import cn from 'classnames';
 
 import { useMediaQuery } from '@modules/common/hooks';
 
-import { LAPTOP_BREAKPOINT } from '@utils/const';
+import { MOBILE_BREAKPOINT } from '@utils/const';
 import { navigationList } from '@utils/data';
 import type { INavigationList } from '@utils/types';
 
 import s from './Navigation.module.scss';
 
 const Navigation = () => {
-	const isLaptop = useMediaQuery(LAPTOP_BREAKPOINT);
+	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
 	const { isMobileNavMode, handleMobileNavMode } = useContext(HeaderContext);
 
 	useEffect(() => {
 		const element = document.querySelector('html');
-		if (!isLaptop) {
+		if (!isMobile) {
 			handleMobileNavMode(false);
 		}
 		if (element) {
@@ -27,7 +27,7 @@ const Navigation = () => {
 				`${isMobileNavMode ? `overflow:hidden;` : ``}`,
 			);
 		}
-	}, [isMobileNavMode, isLaptop]);
+	}, [isMobileNavMode, isMobile]);
 
 	return (
 		<ul className={cn(s.container, isMobileNavMode && s.active)}>

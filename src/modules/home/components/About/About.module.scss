@@ -1,4 +1,16 @@
 .container {
+	margin-bottom: 202px;
+
+	@include media($laptop-bp) {
+		margin-bottom: 130px;
+	}
+
+	@include media($mobile-bp) {
+		margin-bottom: 80px;
+	}
+}
+
+.list {
 	@include flex($gap: 29px);
 	list-style-type: none;
 	padding-left: 0;

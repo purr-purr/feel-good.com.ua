@@ -1,69 +1,72 @@
 .container {
 	@include flex(flex-start, space-between, 50px);
-	padding-block: 160px 150px;
-	margin-bottom: -60px;
+	padding-block: 146px 200px;
 
 	@include pseudo() {
-		top: 0;
-		left: calc((100% - 100vw) / 2);
-		width: 100vw;
-		height: 100%;
-		border-bottom-left-radius: 80px;
-		border-bottom-right-radius: 80px;
+		width: 1287px;
+		height: 698px;
+		left: -110px;
+		top: 60px;
+		background: url('../../assets/pattern1.png') no-repeat center/contain;
 		z-index: -1;
-		background-color: var(--light-bg);
 	}
 
 	@include media($laptop-bp) {
 		padding-block: 110px 120px;
-		margin-bottom: -80px;
+
+		&:before {
+			width: 1100px;
+			height: 500px;
+		}
 	}
 
 	@include media($mobile-bp) {
-		align-items: center;
 		flex-direction: column;
 		padding-top: 40px;
-		padding-bottom: 100px;
-
-		&:before {
-			border-bottom-left-radius: 50px;
-			border-bottom-right-radius: 50px;
-		}
+		padding-bottom: 80px;
 	}
 }
 
 .info {
-	@include flex($align: flex-start, $gap: 20px);
+	@include flex($align: flex-start);
 	align-self: stretch;
 	flex-direction: column;
 	text-align: left;
-	max-width: 560px;
+	max-width: 611px;
 	width: 100%;
 
 	@include media($laptop-bp) {
-		max-width: calc(50% - 20px);
+		max-width: calc(50% - 74px);
 	}
 
 	@include media($mobile-bp) {
-		gap: 20px;
 		max-width: unset;
+		gap: 24px;
 	}
 
 	&Title {
-		font-size: 60px;
+		font-size: 76px;
 		font-weight: 700;
 		text-transform: uppercase;
-		color: var(--dark);
+		color: var(--primary);
+
+		@include media($laptop-bp) {
+			font-size: 50px;
+		}
 
 		@include media($mobile-bp) {
-			font-size: 32px;
+			font-size: 36px;
 		}
 	}
 
 	&Desc {
 		max-width: 464px;
-		font-weight: 300;
-		margin-bottom: auto;
+		margin-top: auto;
+		margin-bottom: 66px;
+
+		@include media($mobile-bp) {
+			margin-bottom: 0;
+		}
 	}
 }
 

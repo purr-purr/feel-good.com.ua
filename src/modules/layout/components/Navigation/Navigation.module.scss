@@ -2,7 +2,7 @@
 	@include flex($align: center, $gap: 50px);
 	list-style-type: none;
 
-	@include media($laptop-bp) {
+	@include media($mobile-bp) {
 		display: none;
 	}
 
@@ -11,8 +11,8 @@
 		position: absolute;
 		width: calc(100% + 80px);
 		height: 100vh;
-		background-color: var(--light-bg);
-		left: -40px;
+		background-color: var(--white);
+		right: -40px;
 		top: 0;
 		padding-top: 80px;
 		padding-left: 40px;
@@ -28,15 +28,14 @@
 	all: unset;
 	cursor: pointer;
 	font-size: 14px;
-	font-weight: 300;
-	color: var(--dark);
+	color: var(--primary);
 
 	@include pseudo(after) {
 		right: 0;
 		bottom: -4px;
 		width: 0;
-		height: 1px;
-		background-color: var(--dark);
+		height: 2px;
+		background-color: var(--primary);
 		transition: width 0.3s ease-in-out;
 	}
 
@@ -52,7 +51,8 @@
 
 	&:hover,
 	&.active {
-		color: var(--dark);
+		color: var(--primary);
+		opacity: 1;
 
 		&:after {
 			width: 100%;
